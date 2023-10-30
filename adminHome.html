@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/admin-home.css" />
+    <link rel="icon" href="img/admin.jpeg" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Header/Navigation Bar Start -->
+    <header class="header">
+      <img
+        th:src="@{/images/e-com-logo.png}"
+        src="../static/images/e-com-logo.png"
+        width="auto"
+        height="40"
+        class="d-inline-block align-top"
+        alt=""
+      />
+      <nav class="">
+        <ul class="main-nav-list">
+          <li class="nav-item">
+            <ion-icon class="nav-icon" name="person-outline"></ion-icon>
+            <a class="nav-link" th:href="@{/admin}" href="#">Admin-Home</a>
+          </li>
+          <li class="nav-item">
+            <ion-icon class="nav-icon" name="log-in-outline"></ion-icon>
+            <a class="nav-link" th:href="@{/logout}" href="#">logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Header/Navigation Bar End -->
+
+    <!-- Admin Welcome -->
+    <div class="text-center">
+      <h1>
+        Welcome back, Admin
+        <!--<ion-icon name="person-circle-outline"></ion-icon>-->
+      </h1>
+      <p class="display">
+        Easily manage your data from this admin <mark>CMS</mark>
+      </p>
+    </div>
+    <!-- End -->
+
+    <!-- Admin Manage Section -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Categories</h4>
+              <p class="card-text">Manage the categories section here.</p>
+              <div class="card-btn">
+                <button>
+                  <a
+                    href="#"
+                    th:href="@{/admin/categories}"
+                    class="card-link btn btn-primary"
+                    >Manage</a
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Products</h4>
+              <p class="card-text">Manage all the products here.</p>
+              <div class="card-btn">
+                <button>
+                  <a
+                    href="#"
+                    th:href="@{/admin/products}"
+                    class="card-link btn btn-primary"
+                    >Manage</a
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End -->
+  </body>
+</html>

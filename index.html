@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Importing js file for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- Importing css file -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/E-shop logo.png">
+
+
+    <title>e-commerce</title>
+
+</head>
+
+<body>
+
+    <!-- Header/Navigation Bar Start -->
+    <header class="header">
+        <img th:src="@{/images/e-com-logo.png}"  src="../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt=""/>
+        <nav class="">
+            <ul class="main-nav-list">
+                <li class="nav-item">
+                    <ion-icon class="nav-icon" name="home-outline"></ion-icon>
+                    <a class="nav-link" th:href="@{/home}" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <ion-icon class="nav-icon" name="bag-outline"></ion-icon>
+                    <a class="nav-link" th:href="@{/shop}" href="#">shop</a>
+                </li>
+                <li class="nav-item">
+                    <ion-icon class="nav-icon" name="log-in-outline"></ion-icon>
+                    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}" href="#">login</a>
+                </li>
+                 <li class="nav-item">
+                    <ion-icon class="nav-icon" name="log-out-outline"></ion-icon>
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">logout</a>
+                </li>
+                <li class="nav-item">
+                    <ion-icon class="nav-icon" name="cart-outline"></ion-icon>
+                    <a class="nav-link" th:href="@{/cart}" href="#">cart</a>
+                </li>
+                <li class="nav-item active">
+                    <span class="nav-link" th:text="${cartCount}">0</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Header/Navigation Bar End -->
+
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="info">
+                    <h1 class="text-heading">Online E-commerce Shop</h1>
+                    <h2 class="text-subheading">Your Online Shopping Destination</h2>
+                    <p class="text-paragraph">Tech Haven positions itself as a go-to place for
+                     staying updated with the latest tech trends and products.!</p>
+                     
+                     
+                     <a class="nav-link" th:href="@{/shop}">
+                         <button class="shop-now">Shop Now &rarr;</button>
+                     </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="grid--2-cols">
+            <div class="content">
+                <a href="#">
+                    <img th:src="@{/images/logo.png}"  src="../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt=""/>
+                </a>
+                <div class="grid--column">
+                    <div>
+                        <p class="copyright">Copyright &copy; <span class="year">2023</span> by E-Commerce, Inc. All
+                            rights
+                        </p>
+                    </div>
+
+                    <div class="footer-links">
+                        <ul class="social-links">
+                            <li>
+                                <a class="footer-link" href="#" title="Instagram.com">
+                                    <ion-icon class="social-icon--instagram" name="logo-instagram"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#" title="facebook.com">
+                                    <ion-icon class="social-icon--facebook" name="logo-facebook"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#" title="Twitter.com">
+                                    <ion-icon class="social-icon--twitter" name="logo-twitter"></ion-icon>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+
+
+</body>
+
+</html>
